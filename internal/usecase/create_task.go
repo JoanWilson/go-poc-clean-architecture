@@ -18,8 +18,8 @@ type CreateTaskUseCase struct {
 	repository domain.TaskRepository
 }
 
-func NewCreateTaskUseCase(r domain.TaskRepository) CreateTaskUseCase {
-	return CreateTaskUseCase{repository: r}
+func NewCreateTaskUseCase(r domain.TaskRepository) *CreateTaskUseCase {
+	return &CreateTaskUseCase{repository: r}
 }
 
 func (u *CreateTaskUseCase) Execute(input CreateTaskInputDto) (*CreateTaskOutputDto, error) {

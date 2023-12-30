@@ -13,8 +13,8 @@ type FindAllTaskUseCase struct {
 	repository domain.TaskRepository
 }
 
-func NewFindAllUseCase(r domain.TaskRepository) FindAllTaskUseCase {
-	return FindAllTaskUseCase{repository: r}
+func NewFindAllUseCase(r domain.TaskRepository) *FindAllTaskUseCase {
+	return &FindAllTaskUseCase{repository: r}
 }
 
 func (u *FindAllTaskUseCase) Execute() ([]*FindAllOutputDto, error) {
